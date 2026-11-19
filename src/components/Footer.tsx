@@ -36,6 +36,15 @@ export default function Footer() {
         <span className={'text-muted'}>
           &copy; {yearCheck()}. All rights reserved.
         </span>
+        <iframe
+          src='https://status.draugskoll.dev/badge?theme=dark'
+          title={'Status badge'}
+          loading='lazy'
+          width='250'
+          height='30'
+          scrolling={'no'}
+          style={{ border: 'none', colorScheme: 'normal' }}
+        />
         <span className={'text-muted'}>
           Built with Next.js and React-Bootstrap.
         </span>

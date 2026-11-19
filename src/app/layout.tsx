@@ -2,8 +2,9 @@ import AppNavbar from '@/components/AppNavbar';
 import Footer from '@/components/Footer';
 import pkg from '@/package.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
-
 import { Fira_Mono, Fira_Sans } from 'next/font/google';
 import React from 'react';
 import { Container } from 'react-bootstrap';
@@ -78,6 +79,8 @@ export default function RootLayout({
         <AppNavbar className={firaMono.className} />
         <Container className={'mt-4'}>{children}</Container>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
