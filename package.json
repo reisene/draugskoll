@@ -6,7 +6,7 @@
     "url": "https://draugskoll.dev"
   },
   "engines": {
-    "node": ">=24.x"
+    "node": "26.x"
   },
   "description": "Personal webpage for DraugSköll",
   "type": "module",
@@ -40,10 +40,16 @@
       "name": "node",
       "onFail": "error"
     },
-    "os": {
-      "name": "win32",
-      "onFail": "error"
-    }
+    "os": [
+      {
+        "name": "win32",
+        "onFail": "error"
+      },
+      {
+        "name": "linux",
+        "onFail": "error"
+      }
+    ]
   },
   "lint-staged": {
     "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}": [
