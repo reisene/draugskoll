@@ -5,10 +5,10 @@ import { BsExclamationTriangle } from 'react-icons/bs';
 
 export default function Error({
   error,
-  retry,
+  reset,
 }: {
   error: Error;
-  retry: () => void;
+  reset: () => void;
 }) {
   return (
     <Container className={'text-center'}>
@@ -16,7 +16,7 @@ export default function Error({
       <BsExclamationTriangle className={'text-danger display-1'} />
       <p className={'lead'}>Something went wrong.</p>
       <p className={'text-muted'}>{error.message}</p>
-      <Button variant={'primary'} onClick={retry}>
+      <Button variant={'primary'} onClick={reset}>
         Retry
       </Button>
     </Container>
