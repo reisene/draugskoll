@@ -1,0 +1,113 @@
+{
+  "name": "draugskoll",
+  "author": {
+    "name": "DraugSköll",
+    "email": "contact@draugskoll.dev",
+    "url": "https://draugskoll.dev"
+  },
+  "engines": {
+    "node": ">=24.x"
+  },
+  "description": "Personal webpage for DraugSköll",
+  "type": "module",
+  "license": "UNLICENSED",
+  "funding": [
+    {
+      "type": "patreon",
+      "url": "https://patreon.com/draugskoll"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/reisene"
+    }
+  ],
+  "private": true,
+  "bugs": {
+    "email": "reisene@youtrack.cloud",
+    "url": "https://github.com/reisene/draugskoll/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reisene/draugskoll.git"
+  },
+  "homepage": "https://draugskoll.dev",
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "onFail": "warn"
+    },
+    "runtime": {
+      "name": "node",
+      "onFail": "error"
+    },
+    "os": {
+      "name": "win32",
+      "onFail": "error"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}": [
+      "prettier --write",
+      "npm run lint -- --no-warn-ignored"
+    ],
+    "*.{json,css,scss,md,mdx,html}": [
+      "prettier --write"
+    ]
+  },
+  "scripts": {
+    "dev": "doppler run -- next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint --max-warnings 0",
+    "prepare": "husky",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "release": "release-it",
+    "release:dry": "release-it --dry-run"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.1.0",
+    "bootstrap": "^5.3.9",
+    "botid": "^1.5.13",
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "19.3.1",
+    "react-icons": "^5.7.0",
+    "resend": "^6.39.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@eslint/js": "^10.0.1",
+    "@next/eslint-plugin-next": "^16.4.6",
+    "@release-it/conventional-changelog": "^12.0.2",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "@vercel/config": "^0.15.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "@vitest/coverage-v8": "^5.1.1",
+    "eslint": "^10.15.0",
+    "eslint-config-next": "16.4.6",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "jsdom": "^31.0.1",
+    "lint-staged": "17.6.1",
+    "prettier": "^3.10.1",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "release-it": "^21.1.2",
+    "tsx": "^4.23.15",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "typescript-eslint": "^8.73.0",
+    "vitest": "^5.1.1"
+  }
+}

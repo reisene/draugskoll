@@ -1,0 +1,27 @@
+/* Basic configuration of Vercel.
+  It can configure and override the behavior of Vercel in a project.
+For more information and possibilities, view https://vercel.com/docs/project-configuration/vercel-ts
+*/
+
+import type { VercelConfig } from '@vercel/config/v1';
+
+export const config: VercelConfig = {
+  regions: ['fra1'],
+  cleanUrls: true,
+  trailingSlash: false,
+  framework: 'nextjs',
+  installCommand: 'npm ci',
+  // crons: [
+  //   {
+  //     path: '/api/cron/contact-retention',
+  //     schedule: '0 3 * * *',
+  //   },
+  // ],
+  git: {
+    deploymentEnabled: {
+      'experiment/*': false,
+      'test/*': false,
+      '*/test': false,
+    },
+  },
+};
