@@ -1,9 +1,23 @@
 import AppNavbar from '@/components/AppNavbar';
+import Footer from '@/components/Footer';
 import pkg from '@/package.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import type { Metadata, Viewport } from 'next';
+
+import { Fira_Mono, Fira_Sans } from 'next/font/google';
 import React from 'react';
 import { Container } from 'react-bootstrap';
+
+const firaSans = Fira_Sans({
+  subsets: ['latin-ext'],
+  weight: ['400', '500', '700'],
+  variable: '--font-fira-sans',
+});
+const firaMono = Fira_Mono({
+  subsets: ['latin-ext'],
+  weight: ['400', '500', '700'],
+  variable: '--font-fira-mono',
+});
 
 const siteUrl = pkg.homepage || 'http://localhost:3000';
 
@@ -60,9 +74,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' data-bs-theme='dark'>
-      <body>
-        <AppNavbar />
+      <body className={`min-vh-100 d-flex flex-column ${firaSans.className}`}>
+        <AppNavbar className={firaMono.className} />
         <Container className={'mt-4'}>{children}</Container>
+        <Footer />
       </body>
     </html>
   );

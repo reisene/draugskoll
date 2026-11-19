@@ -34,7 +34,7 @@ const navbarLinks: {
   },
 ];
 
-export default function AppNavbar() {
+export default function AppNavbar({ className }: { className?: string }) {
   const pathname = usePathname();
   const [expanded, setExpanded] = useState(false);
   const isLinkActive = (href: string) => {
@@ -52,7 +52,7 @@ export default function AppNavbar() {
       onToggle={setExpanded}
       sticky={'top'}
       bg={'body-tertiary'}
-      className={'shadow-sm'}
+      className={['shadow-sm', className].filter(Boolean).join(' ')}
     >
       <Container>
         <Navbar.Brand
