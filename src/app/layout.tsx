@@ -2,6 +2,7 @@ import AppNavbar from '@/components/AppNavbar';
 import Footer from '@/components/Footer';
 import pkg from '@/package.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@/styles/globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
