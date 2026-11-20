@@ -1,8 +1,9 @@
 import pkg from '@/package.json';
-import { Container } from 'react-bootstrap';
+import { Container, Image } from 'react-bootstrap';
 
 function yearCheck() {
   const name: string = pkg.author.name || 'DraugSköll';
+  const icon: string = '/logo.png' || '👻';
   const year: number = 2026;
   const currentYear: number = new Date().getFullYear();
   const isValidYear: boolean = currentYear >= year;
@@ -13,13 +14,25 @@ function yearCheck() {
   } else if (currentYear > year) {
     return (
       <span className={'text-muted'}>
-        {year}-{currentYear} {name}
+        {year}-{currentYear}{' '}
+        <Image
+          src={icon}
+          alt='icon'
+          style={{ width: '16px', height: '16px', marginRight: '4px' }}
+        />{' '}
+        {name}
       </span>
     );
   } else {
     return (
       <span className={'text-muted'}>
-        {currentYear} {name}
+        {currentYear}{' '}
+        <Image
+          src={icon}
+          alt='icon'
+          style={{ width: '16px', height: '16px', marginRight: '4px' }}
+        />{' '}
+        {name}
       </span>
     );
   }
