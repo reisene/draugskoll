@@ -1,0 +1,17 @@
+{
+  "invoice_creator": {
+    "title": "Invoice Creator",
+    "description": "A simple invoice creator web application.",
+    "url": "https://invoice-creator.draugskoll.dev",
+    "repo": "https://github.com/reisene/invoice-creator",
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Bootstrap",
+      "Neon",
+      "Vercel",
+      "Prisma"
+    ]
+  }
+}

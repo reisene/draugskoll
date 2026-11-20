@@ -3,39 +3,22 @@ import { Container, Image } from 'react-bootstrap';
 
 function yearCheck() {
   const name: string = pkg.author.name || 'DraugSköll';
-  const icon: string = '/logo.png' || '👻';
-  const year: number = 2026;
-  const currentYear: number = new Date().getFullYear();
-  const isValidYear: boolean = currentYear >= year;
-  if (!isValidYear) {
-    throw new Error(
-      `The current year is ${currentYear}. Please update the footer component to reflect the correct year.`,
-    );
-  } else if (currentYear > year) {
-    return (
-      <span className={'text-muted'}>
-        {year}-{currentYear}{' '}
-        <Image
-          src={icon}
-          alt='icon'
-          style={{ width: '16px', height: '16px', marginRight: '4px' }}
-        />{' '}
-        {name}
-      </span>
-    );
-  } else {
-    return (
-      <span className={'text-muted'}>
-        {currentYear}{' '}
-        <Image
-          src={icon}
-          alt='icon'
-          style={{ width: '16px', height: '16px', marginRight: '4px' }}
-        />{' '}
-        {name}
-      </span>
-    );
-  }
+  const icon = '/logo.png';
+  const startYear = 2026;
+  const currentYear = new Date().getFullYear();
+  const years =
+    currentYear > startYear ? `${startYear}-${currentYear}` : `${startYear}`;
+  return (
+    <span className={'text-muted'}>
+      {years}{' '}
+      <Image
+        src={icon}
+        alt=''
+        style={{ width: '16px', height: '16px', marginRight: '4px' }}
+      />{' '}
+      {name}
+    </span>
+  );
 }
 
 export default function Footer() {
